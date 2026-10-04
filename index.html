@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Expense Tracker</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-light">
+  <main class="container py-4">
+    <h1 class="h3 mb-3">Expense Tracker <small class="text-muted">(EUR)</small></h1>
+
+    <ul class="nav nav-tabs" id="mainTabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="data-tab" data-bs-toggle="tab" data-bs-target="#data-pane"
+                type="button" role="tab" aria-controls="data-pane" aria-selected="true">Data</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="chart-tab" data-bs-toggle="tab" data-bs-target="#chart-pane"
+                type="button" role="tab" aria-controls="chart-pane" aria-selected="false">Chart</button>
+      </li>
+    </ul>
+
+    <div class="tab-content bg-white border border-top-0 rounded-bottom p-3">
+      <div class="tab-pane fade show active" id="data-pane" role="tabpanel" aria-labelledby="data-tab" tabindex="0">
+        <div class="table-responsive">
+          <table class="table table-sm align-middle mb-0">
+            <thead>
+              <tr>
+                <th scope="col">Month</th>
+                <th scope="col" class="text-end">Income (€)</th>
+                <th scope="col" class="text-end">Expense (€)</th>
+                <th scope="col" class="text-end">Net</th>
+              </tr>
+            </thead>
+            <tbody id="data-body"></tbody>
+            <tfoot>
+              <tr class="fw-bold table-secondary">
+                <td>Total</td>
+                <td class="text-end" id="total-income"></td>
+                <td class="text-end" id="total-expense"></td>
+                <td class="text-end" id="total-net"></td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="chart-pane" role="tabpanel" aria-labelledby="chart-tab" tabindex="0">
+        <div class="chart-wrap">
+          <canvas id="chart" aria-label="Monthly income and expenses bar chart" role="img"></canvas>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
