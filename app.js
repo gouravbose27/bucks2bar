@@ -112,5 +112,19 @@ function renderChart() {
 
 renderRows();
 
+const usernameForm = document.getElementById('username-form');
+usernameForm.addEventListener('submit', event => {
+  event.preventDefault();
+  usernameForm.classList.add('was-validated');
+});
+
 // Chart is built on tab show because a hidden canvas has zero size.
 document.getElementById('chart-tab').addEventListener('shown.bs.tab', renderChart);
+
+document.getElementById('download-chart').addEventListener('click', () => {
+  if (!chart) return;
+  const link = document.createElement('a');
+  link.href = chart.toBase64Image('image/png', 1);
+  link.download = 'expense-chart.png';
+  link.click();
+});

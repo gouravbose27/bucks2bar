@@ -13,6 +13,7 @@ Static vanilla JS app: `index.html` + `app.js`, no build step. Open `index.html`
 - Keep changes minimal and consistent with the existing style (2-space indentation).
 
 ## Buttons
-- All button background colors must be pink (e.g. `#e83e8c`), including `.btn` variants and nav tab buttons.
+- All `.btn` button background colors must be pink (e.g. `#e83e8c`), including `.btn` variants.
+- Nav tabs/links (`.nav-link`) must not be pink; keep them white with dark text.
 - Define this once via a CSS rule or custom property in `index.html`; do not use inline styles per button.
 - Use readable text color on pink backgrounds (white or dark, with sufficient contrast).
